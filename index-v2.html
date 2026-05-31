@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reinigung Berisha GmbH – Sursee</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --black: #0a0a0a;
+            --near-black: #1a1a1a;
+            --gray-800: #2b2b2b;
+            --gray-600: #5a5a5a;
+            --gray-400: #999;
+            --gray-200: #d4d4d4;
+            --gray-100: #e8e8e8;
+            --gray-50: #f5f5f5;
+            --white: #fff;
+            --blue: #1a6fb5;
+            --blue-dark: #13558a;
+            --blue-light: #e8f0f8;
+            --font: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+        html { font-size: 16px; }
+        body {
+            font-family: var(--font);
+            color: var(--near-black);
+            background: var(--white);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* Navigation */
+        nav {
+            border-bottom: 1px solid var(--gray-200);
+            padding: 16px 0;
+        }
+        nav .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-weight: 700;
+            font-size: 1.125rem;
+            color: var(--black);
+            letter-spacing: -0.02em;
+        }
+        .logo span { color: var(--blue); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.15s;
+        }
+        .nav-links a:hover { color: var(--blue); }
+        .nav-cta {
+            background: var(--blue);
+            color: var(--white) !important;
+            padding: 8px 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.15s;
+        }
+        .nav-cta:hover { background: var(--blue-dark); }
+        /* Hero */
+        .hero {
+            padding: 80px 0 64px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            color: var(--black);
+            margin-bottom: 16px;
+        }
+        .hero h1 span { color: var(--blue); }
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 480px;
+            margin-bottom: 32px;
+        }
+        .hero-actions { display: flex; gap: 12px; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.15s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: var(--blue);
+            color: var(--white);
+        }
+        .btn-primary:hover { background: var(--blue-dark); }
+        .btn-outline {
+            background: transparent;
+            color: var(--near-black);
+            border: 1px solid var(--gray-200);
+        }
+        .btn-outline:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+        }
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border: 1px solid var(--gray-200);
+            padding: 0;
+        }
+        .hero-stat {
+            padding: 24px;
+            text-align: center;
+            border-right: 1px solid var(--gray-200);
+        }
+        .hero-stat:last-child { border: none; }
+        .hero-stat .number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--blue);
+            display: block;
+        }
+        .hero-stat .label {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 4px;
+        }
+        /* Sections */
+        section { padding: 64px 0; border-bottom: 1px solid var(--gray-200); }
+        section:last-of-type { border: none; }
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--blue);
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--black);
+            margin-bottom: 16px;
+        }
+        .section-desc {
+            font-size: 1rem;
+            color: var(--gray-600);
+            max-width: 640px;
+            margin-bottom: 40px;
+        }
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+        .about-text p { margin-bottom: 16px; color: var(--gray-600); }
+        .about-text p:last-child { margin: 0; }
+        .about-details { border: 1px solid var(--gray-200); }
+        .about-detail {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            justify-content: space-between;
+        }
+        .about-detail:last-child { border: none; }
+        .about-detail .key {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--gray-600);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .about-detail .value {
+            font-size: 0.9375rem;
+            color: var(--near-black);
+        }
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--gray-200);
+            border: 1px solid var(--gray-200);
+        }
+        .service-item {
+            background: var(--white);
+            padding: 32px 24px;
+        }
+        .service-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 8px;
+        }
+        .service-item p {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+        .contact-info p {
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+            margin-bottom: 24px;
+        }
+        .contact-method { margin-bottom: 20px; }
+        .contact-method .method-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--gray-400);
+            margin-bottom: 4px;
+        }
+        .contact-method .method-value {
+            font-size: 1rem;
+            color: var(--near-black);
+        }
+        .contact-method .method-value a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+        .contact-method .method-value a:hover { text-decoration: underline; }
+        .contact-form {
+            border: 1px solid var(--gray-200);
+            padding: 32px;
+        }
+        .contact-form h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .form-group { margin-bottom: 16px; }
+        .form-group label {
+            display: block;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            margin-bottom: 4px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            border: 1px solid var(--gray-200);
+            padding: 10px 12px;
+            font-size: 0.9375rem;
+            font-family: var(--font);
+            color: var(--near-black);
+            background: var(--white);
+            transition: border-color 0.15s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--blue);
+        }
+        .form-group textarea { min-height: 100px; resize: vertical; }
+        /* Footer */
+        footer {
+            padding: 32px 0;
+            background: var(--gray-50);
+            border-top: 1px solid var(--gray-200);
+        }
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8125rem;
+            color: var(--gray-400);
+        }
+        footer a { color: var(--gray-600); text-decoration: none; }
+        footer a:hover { color: var(--blue); }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero .container { grid-template-columns: 1fr; }
+            .about-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+            .hero-stats { grid-template-columns: 1fr 1fr 1fr; }
+            footer .container { flex-direction: column; gap: 8px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo"><span>Reinigung</span> Berisha GmbH</div>
+            <div class="nav-links">
+                <a href="#about">Über uns</a>
+                <a href="#services">Leistungen</a>
+                <a href="#contact">Kontakt</a>
+                <a href="#contact" class="nav-cta">Offerte anfragen</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div>
+                <h1>Professionelle Reinigung &amp; Umzüge<br>in <span>Sursee</span> und Umgebung</h1>
+                <p>Seit Jahren Ihr verl&auml;sslicher Partner f&uuml;r Sauberkeit und einen reibungslosen Umzug in der gesamten Zentralschweiz.</p>
+                <div class="hero-actions">
+                    <a href="tel:0419204848" class="btn btn-primary">041 920 48 48</a>
+                    <a href="#contact" class="btn btn-outline">Offerte anfordern</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="number">100+</span>
+                    <span class="label">Zufriedene Kunden</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="number">15+</span>
+                    <span class="label">Jahre Erfahrung</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="number">24h</span>
+                    <span class="label">R&uuml;ckmeldung</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-label">Über uns</div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 class="section-title">Ihr Partner f&uuml;r Sauberkeit &amp; Umz&uuml;ge</h2>
+                    <p>Die Reinigung Berisha GmbH mit Sitz in Sursee bietet Ihnen ein umfassendes Angebot an Reinigungsdienstleistungen f&uuml;r private Haushalte, Unternehmen und spezielle Anforderungen.</p>
+                    <p>Unser Team legt grossen Wert auf Gr&uuml;ndlichkeit, Zuverl&auml;ssigkeit und Kundenzufriedenheit. Jeder Auftrag wird mit der gleichen Sorgfalt ausgef&uuml;hrt &ndash; ob B&uuml;roreinigung oder grosser Umzug.</p>
+                    <p>Wir verwenden nur gepr&uuml;fte Reinigungsmittel und modernste Technik, um beste Ergebnisse zu erzielen. Auf Wunsch erstellen wir eine unverbindliche Offerte.</p>
+                </div>
+                <div class="about-details">
+                    <div class="about-detail">
+                        <span class="key">Adresse</span>
+                        <span class="value">Kottenmatte 16, 6210 Sursee</span>
+                    </div>
+                    <div class="about-detail">
+                        <span class="key">Telefon</span>
+                        <span class="value">041 920 48 48</span>
+                    </div>
+                    <div class="about-detail">
+                        <span class="key">Fax</span>
+                        <span class="value">041 910 06 63</span>
+                    </div>
+                    <div class="about-detail">
+                        <span class="key">E-Mail</span>
+                        <span class="value">info@berisha-reinigung.ch</span>
+                    </div>
+                    <div class="about-detail">
+                        <span class="key">Region</span>
+                        <span class="value">Sursee &amp; Zentralschweiz</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="section-label">Leistungen</div>
+            <h2 class="section-title">Was wir f&uuml;r Sie tun k&ouml;nnen</h2>
+            <p class="section-desc">Von der regelm&auml;ssigen Unterhaltsreinigung bis zum kompletten Umzugsservice &ndash; wir bieten alles aus einer Hand.</p>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>Unterhaltsreinigung</h3>
+                    <p>Regelm&auml;ssige Reinigung f&uuml;r Privathaushalte und Gesch&auml;ftsr&auml;ume nach Ihren W&uuml;nschen.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Umzugsreinigung</h3>
+                    <p>Gr&uuml;ndliche Reinigung mit Abnahmegarantie nach Ihrem Umzug &ndash; damit Sie entspannt einziehen k&ouml;nnen.</p>
+                </div>
+                <div class="service-item">
+                    <h3>B&uuml;roreinigung</h3>
+                    <p>Saubere Arbeitsumgebung f&uuml;r mehr Produktivit&auml;t und Wohlbefinden Ihrer Mitarbeiter.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Fensterreinigung</h3>
+                    <p>Streifenfreie Fenster innen und aussen f&uuml;r eine klare Sicht &ndash; auch in grosser H&ouml;he.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Umzug &amp; Transport</h3>
+                    <p>Komplette Umzugsdienstleistungen: Verpacken, Transportieren, Aufbauen &ndash; wir k&uuml;mmern uns um alles.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Baureinigung</h3>
+                    <p>Schlussreinigung nach Renovationen und Neubauten f&uuml;r die &Uuml;bergabe an Bauherr oder Mieter.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-label">Kontakt</div>
+            <h2 class="section-title">Fordern Sie eine Offerte an</h2>
+            <p class="section-desc">Rufen Sie uns an oder schreiben Sie uns &ndash; wir melden uns innerhalb von 24 Stunden zur&uuml;ck.</p>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p>Wir freuen uns auf Ihre Anfrage. Vereinbaren Sie einen unverbindlichen Besichtigungstermin und erhalten Sie ein massgeschneidertes Angebot.</p>
+                    <div class="contact-method">
+                        <div class="method-label">Telefon</div>
+                        <div class="method-value"><a href="tel:0419204848">041 920 48 48</a></div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="method-label">E-Mail</div>
+                        <div class="method-value"><a href="mailto:info@berisha-reinigung.ch">info@berisha-reinigung.ch</a></div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="method-label">Adresse</div>
+                        <div class="method-value">Kottenmatte 16, 6210 Sursee</div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="method-label">Fax</div>
+                        <div class="method-value">041 910 06 63</div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Offerte anfordern</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" placeholder="Ihr Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-Mail *</label>
+                            <input type="email" id="email" placeholder="ihre@email.ch">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" placeholder="041 ...">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Nachricht *</label>
+                            <textarea id="message" placeholder="Was k&ouml;nnen wir f&uuml;r Sie tun?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Anfrage senden</button>
+                        <p style="margin-top:12px;font-size:0.75rem;color:var(--gray-400);">* Pflichtfelder. Wir melden uns innerhalb von 24 Stunden.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <span>&copy; 2026 Reinigung Berisha GmbH &bull; Kottenmatte 16, 6210 Sursee</span>
+            <span><a href="mailto:info@berisha-reinigung.ch">info@berisha-reinigung.ch</a> &bull; <a href="tel:0419204848">041 920 48 48</a></span>
+        </div>
+    </footer>
+</body>
+</html>
